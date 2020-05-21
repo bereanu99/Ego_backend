@@ -12,7 +12,7 @@ namespace ego_station.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        public IUserService _userService;
+        private readonly IUserService _userService;
 
         public UserController(IUserService UserService)
         {

@@ -11,7 +11,7 @@ namespace ego_station.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
-        public int StationId { get; set; }
+        public string StationId { get; set; }
 
         [BsonElement("Name")]
         public string Name { get; set; }

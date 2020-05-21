@@ -40,7 +40,7 @@ namespace ego_station.Infrastructure
         {
             try
             {
-                await _cars.DeleteOneAsync(l => l.CarId.ToString() == id);
+                await _cars.DeleteOneAsync(l => l.CarId == id);
             }
             catch (Exception ex)
             {
@@ -50,14 +50,14 @@ namespace ego_station.Infrastructure
 
         public async Task<CarModel> GetCarAsync(string id)
         {
-            var car = await _cars.FindAsync(ac => ac.CarId.ToString() == id);
+            var car = await _cars.FindAsync(ac => ac.CarId == id);
 
             return car.FirstOrDefault();
         }
 
         public async Task UpdateCarASync(CarModel Car)
         {
-            var filter = Builders<Models.CarModel>.Filter.Eq(a => a.CarId.ToString(), Car.CarId.ToString());
+            var filter = Builders<Models.CarModel>.Filter.Eq(a => a.CarId, Car.CarId);
             await _cars.ReplaceOneAsync(filter, Car);
         }
     }

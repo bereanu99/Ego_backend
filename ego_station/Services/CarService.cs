@@ -10,17 +10,15 @@ namespace ego_station.Services
     public class CarService : ICarService
     {
         private readonly ICarRepository _carRepository;
-        private readonly IUserRepository _userRepository;
 
-        public CarService(ICarRepository carRepository, IUserRepository userRepository)
+        public CarService(ICarRepository CarRepository)
         {
-            _carRepository = carRepository;
-            _userRepository = userRepository;
+            _carRepository = CarRepository;
         }
 
-        public async Task CreateCarASync(string userId, CarModel Car)
+        public async Task CreateCarASync(CarModel Car)
         {
-            throw new NotImplementedException();
+           await _carRepository.AddCarASync(Car);
         }
 
         public async Task DeleteCar(string id)
@@ -28,12 +26,14 @@ namespace ego_station.Services
             await _carRepository.DeleteCar(id);
         }
 
-        public async Task<CarModel> GetCarAsync(string userId)
+        public async Task<CarModel> GetCarAsync(string carId)
         {
-            throw new NotImplementedException();
+            var result = await _carRepository.GetCarAsync(carId);
+            
+            return result;
         }
 
-        public async Task UpdateCarASync(string userId, CarModel Car)
+        public async Task UpdateCarASync(CarModel Car)
         {
             await _carRepository.UpdateCarASync(Car);
         }

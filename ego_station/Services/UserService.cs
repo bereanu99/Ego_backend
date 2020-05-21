@@ -11,12 +11,13 @@ namespace ego_station.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRespository;
+        private readonly ICarRepository _carRepository;
 
-        public UserService(IUserRepository userRepository )
+        public UserService(IUserRepository userRepository, ICarRepository carRepository)
         {
             _userRespository = userRepository;
+            _carRepository = carRepository;
         }
-
 
         //private static string CreateMD5(string input)
         //{
@@ -61,7 +62,12 @@ namespace ego_station.Services
 
         public async Task CreateUser(UserModel User)
         {
+            User.UserId = Guid.NewGuid().ToString();
+            User.CarId = Guid.NewGuid().ToString();
+            var car = new CarModel { CarId = User.CarId };
+
             await _userRespository.AddUserAsync(User);
+            await _carRepository.AddCarASync(car);
         }
     }
 }

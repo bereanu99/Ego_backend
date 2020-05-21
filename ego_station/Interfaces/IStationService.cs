@@ -8,13 +8,14 @@ namespace ego_station.Infrastructure
 {
     public interface IStationService
     {
-        Task CreateStationnASync(StationModel Station);
+        Task CreateStationAsync(StationModel Station);
+        Task CreateStationsAsync(IEnumerable<StationModel> stations);
 
-        Task UpdateStationASync(StationModel Station);
+        Task UpdateStationAsync(StationModel Station);
         
         Task DeleteStation(string id);
         
-        Task<List<StationModel>> GetStationsAsync(MapCoordinates MapCoordinates);
+        Task<List<StationModel>> GetStationsAsync();
         
         Task<StationModel> GetStationAsync(string id);
     }

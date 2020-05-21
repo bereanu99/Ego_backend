@@ -7,7 +7,7 @@ namespace ego_station.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.String)]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [BsonElement("firstName")]
         public string FirstName { get; set; }
@@ -22,6 +22,6 @@ namespace ego_station.Models
         public string Password { get; set; }
         
         [BsonElement("carId")]
-        public int CarId { get; set; }
+        public string CarId { get; set; }
     }
 }

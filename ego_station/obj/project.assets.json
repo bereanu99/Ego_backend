@@ -7886,19 +7886,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mariu\\.nuget\\packages\\": {}
+    "C:\\Users\\mariusb\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Licenta backend\\ego_station\\ego_station.csproj",
+      "projectUniqueName": "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj",
       "projectName": "ego_station",
-      "projectPath": "D:\\Licenta backend\\ego_station\\ego_station.csproj",
-      "packagesPath": "C:\\Users\\mariu\\.nuget\\packages\\",
-      "outputPath": "D:\\Licenta backend\\ego_station\\obj\\",
+      "projectPath": "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj",
+      "packagesPath": "C:\\Users\\mariusb\\.nuget\\packages\\",
+      "outputPath": "D:\\GIT\\Ego_backend\\ego_station\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\mariu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mariusb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7967,7 +7971,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.3.20216.6\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.1.20155.7\\RuntimeIdentifierGraph.json"
       }
     }
   }

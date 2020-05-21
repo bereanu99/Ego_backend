@@ -10,7 +10,7 @@ namespace ego_station.Infrastructure
 {
     public class StationRepository : IStationRepository
     {
-        private IMongoCollection<StationModel> _stations;
+        private IMongoCollection<StationModel> _stationsRepository;
 
         public StationRepository(IConfiguration config)
         {
@@ -21,14 +21,14 @@ namespace ego_station.Infrastructure
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(databaseName);
 
-            _stations = database.GetCollection<Models.StationModel>(stationCollection);
+            _stationsRepository = database.GetCollection<Models.StationModel>(stationCollection);
         }
 
         public async Task AddStationASync(StationModel Station)
         {
             try
             {
-                await _stations.InsertOneAsync(Station);
+                await _stationsRepository.InsertOneAsync(Station);
             }
             catch (Exception ex)
             {
@@ -36,11 +36,21 @@ namespace ego_station.Infrastructure
             }
         }
 
+        public async Task AddStationAsync(StationModel Station)
+        {
+            await _stationsRepository.InsertOneAsync(Station);
+        }
+
+        public async Task AddStationsAsync(IEnumerable<StationModel> stations)
+        {   
+            await _stationsRepository.InsertManyAsync(stations);
+        }
+
         public async Task DeleteStation(string id)
         {
             try
             {
-                await _stations.DeleteOneAsync(l => l.StationId.ToString() == id);
+                await _stationsRepository.DeleteOneAsync(l => l.StationId == id);
             }
             catch (Exception ex)
             {
@@ -50,21 +60,21 @@ namespace ego_station.Infrastructure
 
         public async Task<StationModel> GetStationAsync(string id)
         {
-            var station = await _stations.FindAsync(ac => ac.StationId.ToString() == id);
+            var station = await _stationsRepository.FindAsync(ac => ac.StationId == id);
 
             return station.FirstOrDefault();
         }
 
-        //to do later based on rectagle coor
-        //public async Task<List<StationModel>> GetStationsAsync(MapCoordinates MapCoordinates)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        public async Task UpdateStationASync(StationModel Station)
+        public async Task<List<StationModel>> GetStationsAsync()
         {
-            var filter = Builders<Models.StationModel>.Filter.Eq(a => a.StationId.ToString(), Station.StationId.ToString());
-            await _stations.ReplaceOneAsync(filter, Station);
+            var stations = await _stationsRepository.Find(_ => true).ToListAsync();
+            return stations;
+        }
+
+        public async Task UpdateStationAsync(StationModel Station)
+        {
+            var filter = Builders<Models.StationModel>.Filter.Eq(a => a.StationId, Station.StationId);
+            await _stationsRepository.ReplaceOneAsync(filter, Station);
         }
     }
 }

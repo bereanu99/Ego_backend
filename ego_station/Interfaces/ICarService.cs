@@ -8,12 +8,12 @@ namespace ego_station.Interfaces
 {
     public interface ICarService
     {
-        Task CreateCarASync(string userId, CarModel Car);
+        Task CreateCarASync(CarModel Car);
 
-        Task UpdateCarASync(string userId,CarModel Car);
+        Task UpdateCarASync(CarModel Car);
 
         Task DeleteCar(string id);
 
-        Task<CarModel> GetCarAsync(string userId);
+        Task<CarModel> GetCarAsync(string carId);
     }
 }

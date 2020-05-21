@@ -14,7 +14,7 @@ namespace ego_station.Controllers
         {
             var message = new
             {
-                message = "The API is up and running. Created by MARIUSIKA <a href=\"http://localhost:5000/swagger/index.html\">SWAGGER</a>"
+                message = "The API is up and running. Created by MARIUSIKA "
             };
             return Ok(message);
         }

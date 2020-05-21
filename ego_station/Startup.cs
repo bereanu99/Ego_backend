@@ -42,10 +42,13 @@ namespace ego_station
             // Dependency injection
             // Services
             services.AddScoped<IUserService, UserService>();
-
+            services.AddScoped<ICarService, CarService>();
+            services.AddScoped<IStationService, StationService>();
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IStationRepository, StationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
