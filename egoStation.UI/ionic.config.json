@@ -1,0 +1,7 @@
+{
+  "name": "egoStation.UI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
