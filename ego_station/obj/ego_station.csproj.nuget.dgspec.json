@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Licenta_backend\\ego_station\\ego_station.csproj": {}
+    "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj": {}
   },
   "projects": {
-    "D:\\Licenta_backend\\ego_station\\ego_station.csproj": {
+    "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Licenta_backend\\ego_station\\ego_station.csproj",
+        "projectUniqueName": "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj",
         "projectName": "ego_station",
-        "projectPath": "D:\\Licenta_backend\\ego_station\\ego_station.csproj",
-        "packagesPath": "C:\\Users\\mariu\\.nuget\\packages\\",
-        "outputPath": "D:\\Licenta_backend\\ego_station\\obj\\",
+        "projectPath": "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj",
+        "packagesPath": "C:\\Users\\mariusb\\.nuget\\packages\\",
+        "outputPath": "D:\\GIT\\Ego_backend\\ego_station\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mariu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mariusb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,11 +41,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNetCore.Authentication.Cookies": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
               "version": "[3.1.4, )"
             },
@@ -91,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.3.20216.6\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.1.20155.7\\RuntimeIdentifierGraph.json"
         }
       }
     }
