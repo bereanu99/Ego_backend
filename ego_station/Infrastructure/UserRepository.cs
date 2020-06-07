@@ -40,7 +40,7 @@ namespace ego_station.Infrastructure
 
         public async Task<UserModel> GetAuthenticatedUserAsync(string userLogin, string userPassword)
         {
-            var existingUser = await _users.FindAsync(x => x.Password == userPassword && ((x.FirstName + x.LastName) == userLogin || x.Email == userLogin));
+            var existingUser = await _users.FindAsync(x => x.Password == userPassword &&  x.Email == userLogin);
 
             return existingUser.FirstOrDefault();
         }

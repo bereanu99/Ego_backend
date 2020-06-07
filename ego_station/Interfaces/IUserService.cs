@@ -15,5 +15,7 @@ namespace ego_station.Interfaces
         Task<List<UserModel>> GetUsers();
 
         Task CreateUser(UserModel User);
+
+        Task<UserModel> AuthUser(CredentialsModel credentials);
     }
 }

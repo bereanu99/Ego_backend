@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Inregistrare</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="form-container">
+        <form [formGroup]="registerForm" class="input-form">
+            <div class="panel">
+                <mat-form-field class="small" appearance="outline">
+                    <mat-label>Nume</mat-label>
+                    <input matInput type="text" formControlName="lastName">
+                    <mat-error *ngIf="registerForm.controls.lastName.errors?.required">Acest camp este necesar!</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="small" appearance="outline">
+                    <mat-label>Prenume</mat-label>
+                    <input matInput type="text" formControlName="firstName">
+                    <mat-error *ngIf="registerForm.controls.firstName.errors?.required">Acest camp este necesar!</mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+                <mat-error *ngIf="registerForm.controls.email.errors?.required">Acest camp este necesar!</mat-error>
+            </mat-form-field> 
+
+            <mat-form-field appearance="outline">
+                <mat-label>Parola</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error *ngIf="registerForm.controls.password.errors?.required">Acest camp este necesar!</mat-error>
+            </mat-form-field> 
+            <mat-divider></mat-divider>
+        </form>
+        <div class="buttons-section">
+            <button mat-raised-button (click)="onSubmit()" class="btn">Inregistrare</button>
+        </div>
+
+    </div>
+
+</ion-content>

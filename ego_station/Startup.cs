@@ -24,13 +24,18 @@ namespace ego_station
         }
 
         public IConfiguration Configuration { get; }
-        public string MyAllowSpecificOrigins { get; private set; }
+        //CORS
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins"; // TODO: Add actual allowed origins
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Cors
+            EnableCors(services);
+
             services.AddControllers();
             services.AddOptions();
+
 
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -39,6 +44,7 @@ namespace ego_station
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Ego Station API", Version = "v1" });
             });
+
             // Dependency injection
             // Services
             services.AddScoped<IUserService, UserService>();
@@ -63,7 +69,15 @@ namespace ego_station
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Ego Station API");
             });
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+
             app.UseRouting();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -81,16 +95,16 @@ namespace ego_station
                 builder =>
                 {
                     builder.WithOrigins(
-                            "http://localhost:4200/",
+                            "http://localhost:8100/",
                             "http://86.127.148.187:4200",
-                            "http://localhost:4200",
+                            "http://localhost:8100",
                             "*",
-                            "http://*:4200",
-                            "https://localhost:4201/"
+                            "http://*:8100",
+                            "https://localhost:8100/"
                         ).AllowAnyMethod()
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader(); ;
+                        .AllowAnyHeader();
                 });
             });
         }

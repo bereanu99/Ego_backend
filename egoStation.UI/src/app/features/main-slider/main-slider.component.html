@@ -1,0 +1,19 @@
+<ion-tabs>
+<router-outlet></router-outlet>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="user" (click)="navigate('user')">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Cont</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="map" (click)="navigate('map')">
+            <ion-icon name="map"></ion-icon>
+            <ion-label>Map</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="car" (click)="navigate('car')">
+            <ion-icon name="car"></ion-icon>
+            <ion-label>Masina</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>

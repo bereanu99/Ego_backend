@@ -1,0 +1,36 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px 45px;
+    padding: 20px 15px;
+
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .2);
+
+    .input-form {
+        display: flex;
+        flex-direction: column;
+
+        .panel {
+            display: flex;
+            justify-content: space-around;
+
+            .small {
+                width: 100px;
+            }
+        }
+    }
+
+    .buttons-section {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        .btn {
+            background-color: #1976D2;
+            color: white;
+            margin: 10px;
+        }
+    }
+}

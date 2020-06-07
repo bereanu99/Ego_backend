@@ -69,5 +69,12 @@ namespace ego_station.Services
             await _userRespository.AddUserAsync(User);
             await _carRepository.AddCarASync(car);
         }
+
+        public async Task<UserModel> AuthUser(CredentialsModel credentials)
+        {
+            var account = await _userRespository.GetAuthenticatedUserAsync(credentials.email, credentials.password);
+
+            return account;
+        }
     }
 }

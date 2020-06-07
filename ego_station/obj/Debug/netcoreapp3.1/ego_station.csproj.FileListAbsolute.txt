@@ -103,7 +103,6 @@ D:\Licenta backend\ego_station\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Sw
 D:\Licenta backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csproj.CoreCompileInputs.cache
 D:\Licenta backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cs
 D:\Licenta backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cache
-D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csprojAssemblyReference.cache
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.AssemblyInfoInputs.cache
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.AssemblyInfo.cs
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.dll

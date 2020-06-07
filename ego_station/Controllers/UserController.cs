@@ -27,6 +27,20 @@ namespace ego_station.Controllers
             return Ok(result);
         }
 
+        [HttpPost("auth", Name = "AuthUser")]
+        public async Task<IActionResult> AuthUser([FromBody] CredentialsModel credentials)
+        {
+            var auth = await _userService.AuthUser(credentials);
+
+
+            if (auth == null)
+            {
+                return Unauthorized();
+            }
+
+            return Ok(auth);
+        }
+
         [HttpGet(Name = "GetUsers")]
         public async Task<IActionResult> GetUsersAsync()
         {
@@ -35,7 +49,7 @@ namespace ego_station.Controllers
             return Ok(result);
         }
 
-        [HttpPost(Name = "RegisterUser")]
+        [HttpPost("register",Name = "RegisterUser")]
         public async Task<IActionResult> AddUserAsync([FromBody] UserModel user)
         {
             await _userService.CreateUser(user);
