@@ -1,15 +1,15 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, tap, first } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class AuthService {
     private apiUrl = environment.apiUrl;
-    private token: string;
     private userId: string;
 
     constructor(private http: HttpClient, private router: Router) {
@@ -42,7 +42,6 @@ export class AuthService {
 
     public logout() {
         localStorage.clear();
-        this.token = null;
     }
 
     public get UserId() {

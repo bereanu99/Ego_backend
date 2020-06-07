@@ -1,3 +1,4 @@
+import { UserService } from './core/user.service';
 import { AuthService } from './core/auth.service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     providers: [
         StatusBar,
         AuthService,
+        UserService,
         SplashScreen,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
     ],

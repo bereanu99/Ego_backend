@@ -36,7 +36,6 @@ namespace ego_station
             services.AddControllers();
             services.AddOptions();
 
-
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
