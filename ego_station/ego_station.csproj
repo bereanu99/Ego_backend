@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GoogleApi" Version="3.9.13" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
     <PackageReference Include="MongoDB.Bson" Version="2.10.4" />

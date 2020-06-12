@@ -1,0 +1,27 @@
+.form-container {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+.buttons-section {
+    padding-top: 20px;
+     .btn {
+         background-color: #1976D2;
+         color: white;
+         margin: 10px;
+     }
+}
+
+.error-pas {
+    line-height: 60px;
+    background-color: rgba(255, 0, 0, 0.856);
+    color: white;
+    border-radius: 20px;
+    margin: 50px;
+    padding: 10px;
+}
+
+
+.new-background-color {
+    --background: darkorange;
+}

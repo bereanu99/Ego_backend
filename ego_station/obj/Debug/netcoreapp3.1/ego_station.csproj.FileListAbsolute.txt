@@ -307,7 +307,10 @@ D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis
 D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csproj.CopyComplete
+D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csprojAssemblyReference.cache
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csproj.CoreCompileInputs.cache
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cs
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cache
-D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csproj.CopyComplete
+D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\GoogleApi.dll
+D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

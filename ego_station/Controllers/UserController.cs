@@ -56,5 +56,14 @@ namespace ego_station.Controllers
 
             return Ok();
         }
+
+        [HttpPut("{id}", Name = "UpdateUser")]
+        public async Task<IActionResult> UpdateUser(string id, [FromBody] UserModel user)
+        {
+            user.UserId = id;
+            await _userService.UpdateUser(user);
+
+            return Ok();
+        }
     }
 }

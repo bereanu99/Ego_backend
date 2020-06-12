@@ -19,25 +19,6 @@ namespace ego_station.Services
             _carRepository = carRepository;
         }
 
-        //private static string CreateMD5(string input)
-        //{
-        //    // Use input string to calculate MD5 hash
-        //    using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
-        //    {
-        //        byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
-        //        byte[] hashBytes = md5.ComputeHash(inputBytes);
-
-        //        // Convert the byte array to hexadecimal string
-        //        StringBuilder sb = new StringBuilder();
-        //        for (int i = 0; i < hashBytes.Length; i++)
-        //        {
-        //            sb.Append(hashBytes[i].ToString("X2"));
-        //        }
-        //        return sb.ToString();
-        //    }
-
-        //}
-
         public async Task<UserModel> GetUser(string id)
         {
             var result = await _userRespository.GetUserAsync(id);
@@ -75,6 +56,11 @@ namespace ego_station.Services
             var account = await _userRespository.GetAuthenticatedUserAsync(credentials.email, credentials.password);
 
             return account;
+        }
+
+        public async Task UpdateUser(UserModel User)
+        {
+            await _userRespository.UpdateUser(User);
         }
     }
 }

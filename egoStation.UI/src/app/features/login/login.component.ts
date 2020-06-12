@@ -2,6 +2,7 @@ import { AuthService } from './../../core/auth.service';
 import { Component } from '@angular/core';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
     selector: 'app-login',
@@ -19,12 +20,23 @@ export class LoginComponent {
     returnUrl: string;
     constructor(
         private route: ActivatedRoute,
+        private loadingController: LoadingController,
         private router: Router,
         private authenticationService: AuthService,
     ) {
 
     }
-    // convenience getter for easy access to form fields
+
+    public async presentLoading() {
+        const loading = await this.loadingController.create({
+            message: 'Asteptati...',
+            duration: 1500
+        });
+        await loading.present();
+
+        const { role, data } = await loading.onDidDismiss();
+    }
+
 
     public onSubmit() {
         this.submitted = true;
@@ -32,7 +44,7 @@ export class LoginComponent {
         if (this.loginForm.invalid) {
             return;
         }
-
+        this.presentLoading();
         console.log(this.loginForm.value);
 
         this.authenticationService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(

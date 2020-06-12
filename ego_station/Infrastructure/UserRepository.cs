@@ -47,7 +47,7 @@ namespace ego_station.Infrastructure
 
         public async Task<UserModel> GetUserAsync(string id)
         {
-            var User = await _users.FindAsync(ac => ac.UserId.ToString() == id);
+            var User = await _users.FindAsync(ac => ac.UserId == id);
 
             return User.FirstOrDefault();
         }
@@ -61,7 +61,7 @@ namespace ego_station.Infrastructure
 
         public async Task UpdateUser(UserModel User)
         {
-            var filter = Builders<Models.UserModel>.Filter.Eq(a => a.UserId.ToString(), User.UserId.ToString());
+            var filter = Builders<UserModel>.Filter.Eq(a => a.UserId, User.UserId);
             await _users.ReplaceOneAsync(filter, User);
         }
 

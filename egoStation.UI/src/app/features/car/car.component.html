@@ -1,29 +1,41 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="new-background-color">
         <ion-title>Masina</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div class="form-container">
-        <!-- <form [formGroup]="loginForm" class="input-form">
+        <form [formGroup]="carForm" class="input-form">
+            <div class="panel">
+                <mat-form-field class="small" appearance="outline">
+                    <mat-label>Brand</mat-label>
+                    <input matInput type="text" formControlName="brand">
+                </mat-form-field>
+
+                <mat-form-field class="small" appearance="outline">
+                    <mat-label>Model</mat-label>
+                    <input matInput type="text" formControlName="model">
+                </mat-form-field>
+            </div>
+
             <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" placeholder="email" formControlName="email">
-                <mat-error *ngIf="loginForm.controls.email.errors">Acest camp este necesar!</mat-error>
+                <mat-label>Tipul mufei</mat-label>
+                <input matInput type="text" formControlName="chargeType">
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Parola</mat-label>
-                <input matInput type="password" placeholder="parola" formControlName="password">
-                <mat-error *ngIf="loginForm.controls.password.errors">Acest camp este necesar!</mat-error>
+                <mat-label>Capacitatea bateriei</mat-label>
+                <input matInput type="text" formControlName="battery">
             </mat-form-field>
-            <mat-divider></mat-divider>
         </form>
+
+        <mat-divider></mat-divider>
+
         <div class="buttons-section">
-            <button mat-raised-button (click)="onSubmit()" class="btn">Login</button>
-            <button mat-raised-button (click)="redirectToRegister()" class="btn">Inregistrare</button>
-        </div> -->
+            <button mat-raised-button (click)="saveCarInfo()" class="btn">Salveaza Modificarile</button>
+            <button mat-raised-button (click)="deleteCarInfo()" class="btn-1">Sterge Masina</button>
+        </div>
 
     </div>
 

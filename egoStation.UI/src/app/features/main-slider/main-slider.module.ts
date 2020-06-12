@@ -1,3 +1,5 @@
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from './../../material.module';
 import { UserComponent } from './../user/user.component';
 import { MainSliderComponent } from './main-slider.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -6,6 +8,8 @@ import { CarComponent } from '../car/car.component';
 
 @NgModule({
     imports: [
+        CommonModule,
+        MaterialModule,
         RouterModule.forChild([
             { path: '', component: MainSliderComponent,
                 children: [
@@ -38,7 +42,8 @@ import { CarComponent } from '../car/car.component';
     exports: [
         MainSliderComponent,
         UserComponent,
-        CarComponent
+        CarComponent,
+        MaterialModule,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

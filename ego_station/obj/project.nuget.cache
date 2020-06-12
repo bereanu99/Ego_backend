@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eiPPXoVQe9yqyEHgheS84eQQfbdsn/EXtUVWw7VmcJdaKru69L8pJouM9/FwxeIDWOZ2+vqyLGEsPl+ZE2bdeA==",
+  "dgSpecHash": "SMWLwQoRyr3K+6Np9x0f+twliLbuatOyAJl64ctzB4WUu3aTrjW0ija2JVzmG+i6LhZbYOzAv3QyrQY9zCFQww==",
   "success": true,
   "projectFilePath": "D:\\GIT\\Ego_backend\\ego_station\\ego_station.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mariusb\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
+    "C:\\Users\\mariusb\\.nuget\\packages\\googleapi\\3.9.13\\googleapi.3.9.13.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\mariusb\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -40,6 +41,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\mariusb\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\mariusb\\.nuget\\packages\\portable.bouncycastle\\1.8.1.3\\portable.bouncycastle.1.8.1.3.nupkg.sha512",
     "C:\\Users\\mariusb\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\mariusb\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\mariusb\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

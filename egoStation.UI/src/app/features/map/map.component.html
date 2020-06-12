@@ -1,8 +1,26 @@
 <agm-map [latitude]="latitude" [longitude]='longitude'  [styles]="styles" [disableDefaultUI]="false"
-        [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="false" [zoom]="10">
+        [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="false" [zoom]="15">
+
+         <agm-marker 
+            *ngFor="let m of markers;
+            let i = index" 
+            [latitude]="m.coordinates.latitude"
+            [longitude]="m.coordinates.longitude" 
+            [iconUrl]="iconUrl"
+            >
+            </agm-marker>
+
+            <agm-marker [latitude]="'44.3854'" [longitude]="'26.1075978'">
+            </agm-marker>
+
+            <agm-direction [origin]="origin" [destination]="destination">
+            </agm-direction>
+</agm-map>
+
+<button mat-raised-button (click)="getDirection()" class="btn">Directii</button>
+
 
         <!-- <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat"
-            [longitude]="m.lng" [iconUrl]="iconUrl" [markerDraggable]="m.draggable" [openInfoWindow]="true"
-            (dragEnd)="markerDragEnd(m, $event)">
-            </agm-marker> -->
-</agm-map>
+                    [longitude]="m.lng" [iconUrl]="iconUrl" [markerDraggable]="m.draggable" [openInfoWindow]="true"
+                    (dragEnd)="markerDragEnd(m, $event)">
+                    </agm-marker> -->

@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ego_station.Infrastructure;
 using ego_station.Interfaces;
 using ego_station.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace ego_station
@@ -49,6 +43,7 @@ namespace ego_station
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICarService, CarService>();
             services.AddScoped<IStationService, StationService>();
+            services.AddScoped<DirectionService>();
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
