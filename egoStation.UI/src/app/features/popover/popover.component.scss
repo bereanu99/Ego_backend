@@ -1,0 +1,22 @@
+:host {
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.pop-b {
+    display: flex;
+    justify-content: space-evenly;
+
+    .btn {
+        background-color: #794f41;
+        color: white;
+        margin: 10px;
+    }
+
+    .btn-1 {
+        background-color: #1976D2;
+        color: white;
+        margin: 10px;
+    }
+}

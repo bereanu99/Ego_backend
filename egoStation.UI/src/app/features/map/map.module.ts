@@ -1,10 +1,10 @@
+import { PopoverComponent } from './../popover/popover.component';
 import { MaterialModule } from './../../material.module';
 import { CommonModule } from '@angular/common';
 import { MapComponent } from './map.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AgmCoreModule } from '@agm/core';
-import { AgmDirectionModule } from 'agm-direction';
 
 @NgModule({
     imports: [
@@ -16,9 +16,9 @@ import { AgmDirectionModule } from 'agm-direction';
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyA7N7PK0olNEkLval3s18qrKhONNS4tb68'
         }),
-        AgmDirectionModule,
     ],
-    declarations: [MapComponent],
-    exports: [MapComponent]
+    declarations: [MapComponent, PopoverComponent],
+    exports: [MapComponent],
+    entryComponents: [PopoverComponent]
 })
 export class MapModule {}

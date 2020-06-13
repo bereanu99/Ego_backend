@@ -5,11 +5,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
+        MatDialogModule,
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatIconModule
     ],
     exports: [
+        MatDialogModule,
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,

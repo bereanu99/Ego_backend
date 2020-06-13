@@ -1,5 +1,9 @@
 import { StationService } from './../../core/station.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
+import { AgmMap, LatLngBoundsLiteral, AgmMarker } from '@agm/core';
+import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { PopoverComponent } from '../popover/popover.component';
 
 export interface Directions {
     origin: string;
@@ -10,17 +14,23 @@ export interface Directions {
     templateUrl: './map.component.html',
     styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnDestroy {
+    @ViewChild('AgmMap') agmMap: AgmMap;
     origin: { lat: number; lng: number; };
     destination: { lat: number; lng: number; };
 
     constructor(
         private readonly stationService: StationService,
+        private readonly dialog: MatDialog
     ) { }
+
     public latitude = 44.3854;
     public longitude = 26.1075978;
     public iconUrl = './assets/3.png';
     public markers;
+    public bounds!: LatLngBoundsLiteral;
+    public route!: any;
+    public routeOverview!: any;
 
     public styles = [
         {
@@ -234,39 +244,57 @@ export class MapComponent implements OnInit {
             ]
         }
     ];
+    private subscription = new Subscription();
 
     public ngOnInit() {
         this.loadMarkers();
-        // this.getCoordinates();
     }
 
-    // public getCurrentLocation() {
-    //     this.geolocation.getCurrentPosition().then((resp) => {
-    //         // resp.coords.latitude
-    //         // resp.coords.longitude
-    //     }).catch((error) => {
-    //         console.log('Error getting location', error);
-    //     });
-    // }
+    public async markerClicked(event: AgmMarker, m: any) {
+        console.log(m);
 
-    public dir() {
-        const dirs: Directions = {
-            origin: 'Brooklyn',
-            destination: 'Queens'
+        const dialogRef = this.dialog.open(PopoverComponent, {
+            data: m
+        });
+
+        dialogRef.afterClosed().subscribe(
+            result => {
+                if (result.directions) {
+                    this.getDirections(result.data);
+                }
+        });
+    }
+
+    public getDirections(data: any) {
+        console.log(data);
+        const directions: Directions = {
+            origin: '44.3854,26.1075978',
+            destination: data.coordinates.latitude + ',' + data.coordinates.longitude
         };
 
-        this.stationService.directions2(dirs).subscribe(
-            (res) => console.log(res)
-        );
+        this.subscription.add(this.stationService.directions2(directions).subscribe(
+            (res) => {
+                this.routeOverview = res.routes[0];
+                this.bounds = {
+                    south: this.routeOverview.bounds.southWest.latitude,
+                    north: this.routeOverview.bounds.northEast.latitude,
+                    east: this.routeOverview.bounds.northEast.longitude,
+                    west: this.routeOverview.bounds.southWest.longitude,
+                };
+
+                this.route = res.routes[0].overviewPath.line;
+
+            }
+        ));
     }
+
     public loadMarkers() {
         this.stationService.getStations().subscribe(
             (stations) => {
-                console.log(stations);
                 this.markers = stations;
             }
         );
-        }
+    }
 
     public getCoordinates() {
         this.stationService.directions().subscribe(
@@ -280,5 +308,9 @@ export class MapComponent implements OnInit {
 
         // this.origin = 'Taipei Main Station'
         // this.destination = 'Taiwan Presidential Office'
+    }
+
+    public ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }
