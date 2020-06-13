@@ -27,7 +27,7 @@ export class StationService {
     }
 
     public updateStation(id: string, station: any){
-        return this.http.post<any>(this.apiUrl + 'station' + id, station);
+        return this.http.put<any>(this.apiUrl + 'station/' + id, station);
     }
 
     public directions() {

@@ -25,6 +25,7 @@ export class PopoverComponent implements OnInit {
   }
 
   public rezStation() {
+      this.localData.status = 1;
       const response: PopoverResponse = {
           rezervation: true,
           directions: false,

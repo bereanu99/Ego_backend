@@ -6,7 +6,7 @@
             let i = index" 
             [latitude]="m.coordinates.latitude"
             [longitude]="m.coordinates.longitude" 
-            [iconUrl]="iconUrl"
+            [iconUrl]="iconUrl(m.status)"
             (markerClick)="markerClicked($event, m)"
             >
             </agm-marker>

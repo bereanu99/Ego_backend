@@ -26,7 +26,6 @@ export class MapComponent implements OnInit, OnDestroy {
 
     public latitude = 44.3854;
     public longitude = 26.1075978;
-    public iconUrl = './assets/3.png';
     public markers;
     public bounds!: LatLngBoundsLiteral;
     public route!: any;
@@ -261,8 +260,12 @@ export class MapComponent implements OnInit, OnDestroy {
             result => {
                 if (result.directions) {
                     this.getDirections(result.data);
+                } else {
+                    this.subscription.add(
+                        this.stationService.updateStation(result.data.stationId, result.data).subscribe()
+                    );
                 }
-        });
+            });
     }
 
     public getDirections(data: any) {
@@ -308,6 +311,10 @@ export class MapComponent implements OnInit, OnDestroy {
 
         // this.origin = 'Taipei Main Station'
         // this.destination = 'Taiwan Presidential Office'
+    }
+
+    public iconUrl(n: number): string {
+        return n === 0 ? './assets/0.png' : './assets/1.png';
     }
 
     public ngOnDestroy(): void {
