@@ -1,23 +1,26 @@
-<agm-map #AgmMap [fitBounds]="bounds" [latitude]="latitude" [longitude]='longitude'  [styles]="styles" [disableDefaultUI]="false"
-        [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="false" [zoom]="15">
+<agm-map #AgmMap [fitBounds]="bounds" [latitude]="latitude" [longitude]='longitude' [styles]="styles"
+    [disableDefaultUI]="false" [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="false"
+    [zoom]="15">
 
 
-<agm-marker-cluster [minimumClusterSize]="3" imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+    <agm-marker-cluster [minimumClusterSize]="3"
+        imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
         <agm-marker *ngFor="let m of markers;
                     let i = index" [latitude]="m.coordinates.latitude" [longitude]="m.coordinates.longitude"
             [iconUrl]="iconUrl(m.status)" (markerClick)="markerClicked($event, m)">
         </agm-marker>
-</agm-marker-cluster>
-            <agm-marker [latitude]="'44.3854'" [longitude]="'26.1075978'">
-            </agm-marker>
+    </agm-marker-cluster>
+    
+    <agm-marker [latitude]="'44.3854'" [longitude]="'26.1075978'">
+    </agm-marker>
 
-            <agm-polyline  [strokeColor]="'#13afe8'" [strokeWeight]="3">
-                <agm-polyline-point *ngFor="let test of route" [latitude]="test.latitude" [longitude]="test.longitude">
-                </agm-polyline-point>
-            </agm-polyline>
+    <agm-polyline [strokeColor]="'#13afe8'" [strokeWeight]="3">
+        <agm-polyline-point *ngFor="let test of route" [latitude]="test.latitude" [longitude]="test.longitude">
+        </agm-polyline-point>
+    </agm-polyline>
 
 </agm-map>
-            <!-- <button mat-raised-button color="primary" (click)="steril()">
+<!-- <button mat-raised-button color="primary" (click)="steril()">
                 MEMEL
             </button>
             <button mat-raised-button color="primary" (click)="meme()">
