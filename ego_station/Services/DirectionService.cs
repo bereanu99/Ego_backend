@@ -9,11 +9,9 @@ namespace ego_station.Services
 {
     public class DirectionService
     {
-        private static HttpClient client = new HttpClient();
         public const string googleUrl = "http://maps.googleapis.com/maps/api/directions/json?origin=";
         public DirectionsResponse GetDirections(DirectionModel directionModel)
         {
-
             DirectionsRequest request = new DirectionsRequest();
 
             request.Key = "AIzaSyA7N7PK0olNEkLval3s18qrKhONNS4tb68";
@@ -24,6 +22,5 @@ namespace ego_station.Services
             var response = GoogleApi.GoogleMaps.Directions.Query(request);
             return response;
         }
-
     }
 }
