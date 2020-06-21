@@ -1,7 +1,23 @@
 agm-map {
-    height: 106.5%;
+    height: 107%;
 }
 
 .meme {
     background-color: #fff;
+}
+
+.sonar {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 40px !important;
+    min-width: 52px !important;
+}
+
+.cancel {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 40px !important;
+    min-width: 52px !important;
 }

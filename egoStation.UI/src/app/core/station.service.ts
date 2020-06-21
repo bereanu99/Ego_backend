@@ -1,4 +1,4 @@
-import { Directions } from './../features/map/map.component';
+import { Directions, Station } from './../features/map/map.component';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -22,11 +22,14 @@ export class StationService {
         return this.http.get<any>(this.apiUrl + 'station' + id);
     }
 
-    public postStation(station: any){
+    public postStation(station: Station){
         return this.http.post<any>(this.apiUrl + 'station', station);
     }
+    public postStations(stations: Station[]) {
+        return this.http.post<any>(this.apiUrl + 'station/list', stations);
+    }
 
-    public updateStation(id: string, station: any){
+    public updateStation(id: string, station: Station){
         return this.http.put<any>(this.apiUrl + 'station/' + id, station);
     }
 

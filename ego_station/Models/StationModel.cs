@@ -20,7 +20,7 @@ namespace ego_station.Models
         public MapCoordinates Coordinates { get; set; }      
         
         [BsonElement("Descritpion")]
-        public string Descritpion { get; set; }
+        public string Description { get; set; }
 
         [BsonElement("Status")]
         public int Status { get; set; }

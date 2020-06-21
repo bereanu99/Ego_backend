@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { Component, OnDestroy } from '@angular/core';
+import { FormGroup,  FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../../core/user.service';
@@ -23,8 +23,8 @@ export class CarComponent implements OnDestroy {
         carId: new FormControl(this.carId),
         brand: new FormControl(''),
         model: new FormControl(''),
-        chargeType: new FormControl(''),
-        battery: new FormControl(''),
+        chargeType: new FormControl(0),
+        battery: new FormControl(0),
     });
 
     public subscription = new Subscription();
@@ -54,8 +54,15 @@ export class CarComponent implements OnDestroy {
     }
 
     public saveCarInfo() {
+        const car: Car = {
+            brand: this.carForm.value.brand,
+            model: this.carForm.value.model,
+            chargeType: +this.carForm.value.chargeType,
+            battery: +this.carForm.value.battery,
+        };
+        console.log(car);
         this.subscription.add(
-            this.userService.saveCarInfo(this.carForm.value).subscribe(
+            this.userService.saveCarInfo(car).subscribe(
                 response => {
                     this.router.navigate(['/slider']);
                 },
