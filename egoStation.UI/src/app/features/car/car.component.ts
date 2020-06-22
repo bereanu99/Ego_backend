@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup,  FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { UserService } from '../../core/user.service';
 import { LoadingController } from '@ionic/angular';
 
 export interface Car {
+    carId: string;
     brand: string;
     model: string;
     chargeType: number;
@@ -17,7 +18,7 @@ export interface Car {
     templateUrl: './car.component.html',
     styleUrls: ['./car.component.scss'],
 })
-export class CarComponent implements OnDestroy {
+export class CarComponent implements OnInit, OnDestroy {
     public carId: string = JSON.parse(localStorage.getItem('carid'));
     public carForm = new FormGroup({
         carId: new FormControl(this.carId),
@@ -33,7 +34,10 @@ export class CarComponent implements OnDestroy {
         private readonly router: Router,
         private readonly userService: UserService,
         private readonly loadingController: LoadingController,
-    ) {
+    ) {  }
+
+    public ngOnInit(): void {
+        this.carForm.controls.carId.setValue(this.carId);
         this.subscription.add(
             this.userService.getCarInfo(this.carId).subscribe(
                 (result) => {
@@ -55,6 +59,7 @@ export class CarComponent implements OnDestroy {
 
     public saveCarInfo() {
         const car: Car = {
+            carId: this.carId,
             brand: this.carForm.value.brand,
             model: this.carForm.value.model,
             chargeType: +this.carForm.value.chargeType,

@@ -2,7 +2,6 @@
     [disableDefaultUI]="false" [zoomControl]="false" [streetViewControl]="false" [fullscreenControl]="false"
     [zoom]="15">
 
-
     <agm-marker-cluster [minimumClusterSize]="3"
         imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
         <agm-marker *ngFor="let m of markers;
@@ -20,12 +19,7 @@
     </agm-polyline>
 
 </agm-map>
-<!-- <button mat-raised-button color="primary" (click)="steril()">
-                MEMEL
-            </button>
-            <button mat-raised-button color="primary" (click)="meme()">
-                MEMECONSOL
-            </button> -->
+
 <button mat-raised-button color="primary" class="sonar">
     <mat-icon>wifi_tethering</mat-icon>
 </button>
@@ -33,3 +27,7 @@
 <button *ngIf="navigate" (click)="cancelNav()" mat-raised-button color="primary" class="cancel">
     <mat-icon>cancel</mat-icon>
 </button>
+
+<!-- <button mat-raised-button color="primary" (click)="steril()">MEMEL</button>
+<button mat-raised-button color="primary" (click)="meme()">MEMECONSOL</button> -->
+<!-- F/Kbe9rSx?krXz9 -->

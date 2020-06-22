@@ -7446,7 +7446,7 @@ export class MapComponent implements OnInit, OnDestroy {
                     this.snackBar.open(
                         'Durata si distanta traseului ' + this.routeOverview.legs[0].duration.text + ' ' + this.routeOverview.legs[0].distance.text, '', {
                         verticalPosition: 'top',
-                        duration: 3000,
+                        duration: 5000,
                     });
                 }
             ));

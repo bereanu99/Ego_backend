@@ -314,3 +314,10 @@ D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicatio
 D:\GIT\Ego_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cache
 D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\GoogleApi.dll
 D:\GIT\Ego_backend\ego_station\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Licenta_backend\ego_station\bin\Debug\netcoreapp3.1\GoogleApi.dll
+D:\Licenta_backend\ego_station\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Licenta_backend\ego_station\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Licenta_backend\ego_station\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Licenta_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.csproj.CoreCompileInputs.cache
+D:\Licenta_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cs
+D:\Licenta_backend\ego_station\obj\Debug\netcoreapp3.1\ego_station.MvcApplicationPartsAssemblyInfo.cache
